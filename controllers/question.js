@@ -75,21 +75,6 @@ const deleteQuestion = asyncErrorWrapper(async (req, res, next) => {
     })
 })
 
-
-const deleteAllQuestions = asyncErrorWrapper(async (req, res, next) => {
-    const {id} = req.params;
-    // Info gibi alabilirsin
-
-    let question = await Question.findByIdAndDelete(id);
-
-    return res.status(200)
-    .json({
-        success : true,
-        message : "Question delete operation successful"
-    })
-})
-
-
 module.exports = {
     askNewQuestion,
     getSingleQuestion,
